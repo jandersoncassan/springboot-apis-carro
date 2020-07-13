@@ -6,7 +6,7 @@ spring:
 #  datasource:
 #   url: jdbc:mysql://localhost:3306/carros?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 #    username: root
-#    password: 
+#    password: eita
 
 
 ##JPA
