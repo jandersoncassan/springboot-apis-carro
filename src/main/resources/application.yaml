@@ -12,7 +12,7 @@ spring:
         format_sql: true
         ddl-auto: update
 
-# logging
+# logging  
 logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
