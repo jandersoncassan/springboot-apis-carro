@@ -16,6 +16,7 @@ public class DataBaseConfig {
 	@Value("${spring.datasource.url}")
 	private String url;
 		
+	
 	@Bean
     public DataSource dataSource()  {
        HikariConfig hikariConfig = new HikariConfig();
@@ -29,7 +30,7 @@ public class DataBaseConfig {
 	private String getData(String key) {
 		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
 		textEncryptor.setPassword("heroku");
-		return textEncryptor.decrypt(key);
+		return  textEncryptor.decrypt(key);
 	}
 	
 }
