@@ -1,7 +1,7 @@
 # MySQL
 spring: 
   datasource:
-   url: DdcB0rwBUDUwX8eQwpOGOza/54ftgMbH4MCtkRqkgKiX08pm9lUbGlnRurVm5siB9Z5eAWVbnv4g3FHloP+TBOCaq/vlCfA6Qc0vz5r4A7jm4pV1OSVmCZZ4IYUWsmgH/f+94ogYrxZoSlA+OSJM8HBYCVOItwZ5HTIfKWwYY/Xr02+Gt2xlWktd8o7EFXjKZUqh4WBCLcRTG0XU+nDOmP/SqLFr2SooQV9ndUIPTJA/maOzDK0ZjA==
+   url: jdbc:mysql://localhost:3306/carros?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
    username: root
    password: 
 

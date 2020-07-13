@@ -1,7 +1,13 @@
 # MySQL
 spring: 
   datasource:
-    url: KRwP4RRIo/Xx8kfuKjWWOMDIA1iRM0xQVRDKOBKMjMaTJnVs7ltY6f31cGeuVcFdWINST8dvnI97NW4a3pARwpV0c9znr/+CZE8wqbycMxNvJLos4GaYecc3YzSG6e1gcmcCFR6h2J209dO763GL3g==
+    url: jdbc:mysql://bb422509e54283:f3a5cba8@us-cdbr-east-02.cleardb.com/heroku_5d75bfaa6eeb92c?reconnect=true
+ 
+#  datasource:
+#   url: jdbc:mysql://localhost:3306/carros?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#    username: root
+#    password: eita
+
 
 ##JPA
   jpa:
@@ -12,7 +18,7 @@ spring:
         format_sql: true
         ddl-auto: update
 
-# logging  
+# logging
 logging:
   pattern:
     console: '%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n'
@@ -24,8 +30,8 @@ logging:
 # Security
 #  security:
 #    user:
-#      name: user
-#      password: user
+#      name: jande
+#      password: jandao
 
 
 
