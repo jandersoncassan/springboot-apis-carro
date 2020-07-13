@@ -1,9 +1,13 @@
 # MySQL
 spring: 
   datasource:
-    url: jdbc:mysql://localhost:3306/carros?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: root
-    password: 
+    url: jdbc:mysql://bb422509e54283:f3a5cba8@us-cdbr-east-02.cleardb.com/heroku_5d75bfaa6eeb92c?reconnect=true
+ 
+#  datasource:
+#   url: jdbc:mysql://localhost:3306/carros?useSSL=false&allowPublicKeyRetrieval=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+#    username: root
+#    password: 
+
 
 ##JPA
   jpa:
