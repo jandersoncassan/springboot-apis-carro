@@ -1,7 +1,7 @@
 # H2
 spring:
   datasource: 
-    url: f/EKTHKs2SCX5rWoviPbgy+A95uPAiVRyJenGy7b8UU=
+    url: jdbc:h2:mem:carros
     driver-class-name: org.h2.Driver
     username: sa
     password: 
