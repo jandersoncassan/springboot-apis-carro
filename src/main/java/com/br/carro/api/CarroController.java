@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -37,8 +40,9 @@ public class CarroController {
 
 
 	@GetMapping
-	public ResponseEntity<?> getCarros() {
-		List<CarroDTO> carros = carroService.getCarros();
+	public ResponseEntity<?> getCarros(@RequestParam(value="page", defaultValue = "0") Integer page,
+									   @RequestParam(value="size", defaultValue = "10") Integer size) {
+		List<CarroDTO> carros = carroService.getCarros(PageRequest.of(page, size, Sort.by("id").ascending()));
 		return carros.isEmpty() ? ResponseEntity.notFound().build() : ResponseEntity.ok(carros);
 	}
 
@@ -50,9 +54,11 @@ public class CarroController {
 	}
 
 	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<?> getCarrosByTipo(@PathVariable("tipo") String tipo) {
+	public ResponseEntity<?> getCarrosByTipo(@PathVariable("tipo") String tipo,
+											 @RequestParam(value="page", defaultValue = "0") Integer page,
+											 @RequestParam(value="size", defaultValue = "10") Integer size) {
 
-		List<CarroDTO> carros = carroService.getCarroByTipo(tipo);
+		List<CarroDTO> carros = carroService.getCarroByTipo(tipo, PageRequest.of(page, size));
 
 		return carros.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(carros);
 	}

@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
@@ -20,9 +21,9 @@ public class CarroService {
 	@Autowired
 	private CarroRepository carroRepository;
 	
-	public List<CarroDTO> getCarros(){		
+	public List<CarroDTO> getCarros(Pageable pageable){		
 		
-		List<Carro> carros = carroRepository.findAll();		
+		//List<Carro> carros = carroRepository.findAll(pageable);		
 		/* 1° Jeito
 	 		List<CarroDTO> lista = new ArrayList<>();
 			for(Carro c : carros) {
@@ -34,7 +35,7 @@ public class CarroService {
 		/* 2° Jeito
 		  return carros.stream().map(carro -> new CarroDTO(carro)).collect(Collectors.toList());
 		 */
-		return carros.stream().map(CarroDTO::create).collect(Collectors.toList());
+		return carroRepository.findAll(pageable).stream().map(CarroDTO::create).collect(Collectors.toList());
 	}
 
 	public CarroDTO getCarroById(Long id){		
@@ -43,8 +44,8 @@ public class CarroService {
 	}
 	
 	
-	public List<CarroDTO> getCarroByTipo(String tipo) {		
-		List<Carro> carros = carroRepository.findByTipo(tipo);
+	public List<CarroDTO> getCarroByTipo(String tipo, Pageable pageable) {		
+		List<Carro> carros = carroRepository.findByTipo(tipo, pageable);
 		return carros.stream().map(CarroDTO::create).collect(Collectors.toList());		
 	}
 

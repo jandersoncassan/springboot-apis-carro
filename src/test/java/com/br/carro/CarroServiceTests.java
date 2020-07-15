@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.br.carro.dto.CarroDTO;
@@ -58,7 +59,7 @@ public class CarroServiceTests {
 
 	@Test
 	public void testGetCarros() {		
-		List<CarroDTO> carros = carroService.getCarros();
+		List<CarroDTO> carros = carroService.getCarros(PageRequest.of(0, 30));
 		assertEquals(30, carros.size());
 	}
 
@@ -72,7 +73,7 @@ public class CarroServiceTests {
 
 	@Test
 	public void testGetCarroByTipo() {		
-		List<CarroDTO> carro = carroService.getCarroByTipo("esportivos");
+		List<CarroDTO> carro = carroService.getCarroByTipo("esportivos", PageRequest.of(0, 10));
 		assertEquals(false, carro.isEmpty());
 	}
 	

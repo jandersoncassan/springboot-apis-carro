@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
-    public static final String AUTH_URL = "/api/v1/login";
+    public static final String AUTH_URL = "/api/v1/token";
 
     private final AuthenticationManager authenticationManager;
 

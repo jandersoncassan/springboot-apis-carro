@@ -57,16 +57,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         
         AuthenticationManager authManager = authenticationManager();
         http.authorizeRequests() //AUTORIZANDO AS REQUISIÇÕES
-            .antMatchers(HttpMethod.GET, "/api/v1/login").permitAll() //PARA O LOGIN ESTAMOS AUTORIZANDO
-            .antMatchers("/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**")
-            .permitAll()
+            .antMatchers(HttpMethod.GET, "/api/v1/token").permitAll() //PARA O token ESTAMOS AUTORIZANDO
+            .antMatchers("/","/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**").permitAll()
             .anyRequest().authenticated() //QUALQUER REQUISIÇÃO PRECISA ESTAR AUTENTICADA, PRECISA FICAR AQUI EM BAIXO DEPOIS DAS PERMITALL
             .and().csrf().disable()
             .addFilter(new JwtAuthenticationFilter(authManager)) //ADICIONANDO O FILTER DE AUTENTICAÇÃO
             .addFilter(new JwtAuthorizationFilter(authManager, userDetailsService)) //ADICIONANDO O FILTER DE AUTORIZAÇÃO
             .exceptionHandling()
-            .accessDeniedHandler(accessDeniedHandler)
-            .authenticationEntryPoint(unauthorizedHandler)
+            .accessDeniedHandler(accessDeniedHandler) //handler para acesso negado
+            .authenticationEntryPoint(unauthorizedHandler) //handler para não autorizado
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); //DESLIGANDO A CRIAÇÃO DE COOKIES
 }

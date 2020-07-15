@@ -13,7 +13,7 @@ public class ServletUtil {
 
         response.setStatus(status.value());
         response.setCharacterEncoding("UTF-8");
-        response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
+        response.setContentType(MediaType.APPLICATION_JSON_VALUE);
 
         response.getWriter().write(json);
     }
