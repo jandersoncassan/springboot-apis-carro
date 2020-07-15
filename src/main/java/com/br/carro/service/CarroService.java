@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import com.br.carro.dto.CarroDTO;
+import com.br.carro.entity.Carro;
 import com.br.carro.exception.ObjectNotFoundException;
-import com.br.carro.model.Carro;
 import com.br.carro.repository.CarroRepository;
 
 @Service

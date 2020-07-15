@@ -2,7 +2,7 @@ package com.br.carro.dto;
 
 import org.modelmapper.ModelMapper;
 
-import com.br.carro.model.Carro;
+import com.br.carro.entity.Carro;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.br.carro.model;
+package com.br.carro.entity;
 
 import java.util.Collection;
 import java.util.List;

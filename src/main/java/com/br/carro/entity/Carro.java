@@ -1,4 +1,4 @@
-package com.br.carro.model;
+package com.br.carro.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

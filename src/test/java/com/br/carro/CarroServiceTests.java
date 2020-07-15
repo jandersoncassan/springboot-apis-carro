@@ -15,8 +15,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.br.carro.dto.CarroDTO;
+import com.br.carro.entity.Carro;
 import com.br.carro.exception.ObjectNotFoundException;
-import com.br.carro.model.Carro;
 import com.br.carro.service.CarroService;
 
 @RunWith(SpringRunner.class)
